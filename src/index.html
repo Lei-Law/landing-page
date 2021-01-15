@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <script src="scripts/main.min.js" defer></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Landing</title>
+</head>
+<body>
+
+@@include("_includes/blocks/fixed-btns/fixed-btns.html")
+
+@@include("_includes/sections/header/header.html")
+
+@@include("_includes/sections/primary-section/primary-section.html", {
+    "logo": false,
+    "sectionName": "top-section",
+    "sectionHeading": "Push yourself & your designs",
+    "sectionText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, \
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "sectionContent": "@@include('../../blocks/form/form.html')"
+})
+
+@@include("_includes/sections/secondary-section/secondary-section.html", {
+    "sectionName": "design-section",
+    "sectionHeading": "Latest design style",
+    "sectionText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, \
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "sectionContent": '<div class="design__img-block"><img src="images/phone.png" alt="Phone"></div>',
+})
+
+@@include("_includes/sections/secondary-section/secondary-section.html", {
+    "sectionName": "features-section",
+    "sectionHeading": "Features of app",
+    "sectionText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, \
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "sectionContent": "@@include('../../blocks/cards/cards.html')"
+})
+
+@@include("_includes/sections/secondary-section/secondary-section.html", {
+    "sectionName": "guidelines-section",
+    "sectionHeading": "Our design guidelines",
+    "sectionText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, \
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "sectionContent": "@@include('../../blocks/tabs/tabs.html')"
+})
+
+@@include("_includes/sections/primary-section/primary-section.html", {
+    "logo": true,
+    "sectionName": "bottom-section",
+    "sectionHeading": "Push yourself & your designs",
+    "sectionText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, \
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "sectionContent": ""
+})
+
+@@include("_includes/sections/footer/footer.html")
+
+</body>
+</html>

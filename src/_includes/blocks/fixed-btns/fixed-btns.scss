@@ -1,0 +1,75 @@
+$top-scroll-color: #000000;
+
+%fixed-front {
+  @include translateCenter(y);
+  z-index: 100;
+  position: fixed;
+}
+
+@keyframes topScrollAnimation {
+  to {opacity: .5}
+}
+
+@keyframes contactBtnAnimation {
+  to {opacity: 1}
+}
+
+
+//FIXED BTNS
+.top-scroll {
+  @extend %default-btn;
+  @extend %fixed-front;
+  @include animateFadeIn(topScrollAnimation, .5s);
+  left: 2.7rem;
+  padding: 1.6rem;
+  background: $top-scroll-color;
+  &:hover {
+    background-color: $top-scroll-color;
+    @media screen and (hover: hover) and (pointer: fine) {
+      svg {
+        transform: rotate(-90deg) scale(1.3);
+      }
+    }
+  }
+
+  svg {
+    @include setTransition(transform);
+    width: 1.8rem;
+    height: 1.8rem;
+    transform: rotate(-90deg);
+  }
+
+  @media screen and (max-width: $xl) {
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  @media screen and (max-width: $md) {
+    padding: 1rem;
+  }
+}
+
+.contact-btn {
+  @extend %default-btn;
+  @extend %fixed-front;
+  @include animateFadeIn(contactBtnAnimation, .5s);
+  right: 0;
+  transform-origin: bottom right;
+  transform: translateY(-180%) rotate(-90deg);
+  padding: 2rem 4rem;
+  max-width: 20rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  &:hover {
+    background-color: $additional-color;
+  }
+
+  @media screen and (max-width: $lg) {
+    padding: 1.5rem 2rem;
+  }
+  @media screen and (max-width: $md) {
+    padding: 1rem 2rem;
+    opacity: .7;
+    font-size: 1.3rem;
+  }
+}

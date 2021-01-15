@@ -1,0 +1,135 @@
+$footer-font-color: #8297a7;
+
+@mixin setSocialBtnBg($bg) {
+  background-color: $bg;
+  &:hover {
+    background-color: darken($bg, 20%);
+  }
+}
+
+
+//FOOTER
+.footer {
+  position: relative;
+  padding-bottom: 11.5rem;
+  @media screen and (max-width: $sm) {
+    padding-bottom: 6rem;
+  }
+}
+
+.footer__img-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 67rem;
+
+  picture {
+    margin-right: -5.5rem;
+  }
+
+  @media screen and (max-width: $xl) {
+    picture {
+      max-width: 80%;
+    }
+  }
+  @media screen and (max-width: $lg) {
+    height: 55rem;
+  }
+  @media screen and (max-width: $md), screen and (max-height: $md)  {
+    height: 4rem;
+    picture {
+      display: none;
+    }
+  }
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  div:not(.footer__social-btns) {
+    margin-bottom: 2rem;
+  }
+
+  *:not(.social-btn) {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $footer-font-color;
+  }
+
+  a:not(.social-btn):hover {
+    color: $additional-color;
+  }
+
+  p, li {
+    margin-bottom: 1.8rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    * {
+      font-size: 1.1rem;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+.footer__social-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 4.8rem;
+}
+
+.social-btn {
+  @extend %btn;
+  padding: 1rem 2rem;
+  margin-left: .5rem;
+  border-radius: .3rem;
+  font-family: Firasans, sans-serif;
+  font-size: 1.3rem;
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1rem;
+  }
+
+  &.tw-btn {
+    @include setSocialBtnBg(#69b6f2);
+  }
+  &.fb-btn {
+    @include setSocialBtnBg(#395799);
+  }
+}
+
+.footer__menu {
+  max-width: 40%;
+  @media screen and (max-width: $md) {
+    max-width: 100%;
+  }
+}
+
+.footer__menu-list {
+  column-count: 2;
+  column-gap: 7rem;
+  @media screen and (max-width: $md) {
+    column-count: 4;
+    column-gap: 3rem;
+  }
+}
+
+.footer__info {
+  width: 40%;
+  text-align: right;
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+}
+
+.footer__note {
+  width: 100%;
+}

@@ -1,0 +1,72 @@
+//ПЕРЕМЕННЫЕ
+$xs: 375px;
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1366px;
+
+$violet: #8500d2;
+$turquoise: #27c7c5;
+
+$main-color: $violet;
+$additional-color: $turquoise;
+$main-font-color: #ffffff;
+
+
+//МИКСИНЫ
+@mixin setTransition($property) {
+  transition: $property .2s linear;
+}
+
+@mixin translateCenter($axis: null, $addTransform: null) {
+  $x: 0;
+  $y: 0;
+
+  @if not $axis or to-upper-case($axis) == Y {
+    top: 50%;
+    $y: -50%;
+  }
+  @if not $axis or to-upper-case($axis) == X {
+    left: 50%;
+    $x: -50%;
+  }
+  transform: translate($x, $y) $addTransform;
+}
+
+@mixin animateFadeIn($name, $delay: 0, $duration: 1s) {
+  opacity: 0;
+  animation-name: $name;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+}
+
+
+//ПЛЕЙСХОЛДЕРЫ
+%btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  border: none;
+  font-weight: 700;
+  color: $main-font-color;
+  fill: $main-font-color;
+  cursor: pointer;
+  @include setTransition(background-color);
+}
+
+%default-btn {
+  @extend %btn;
+  padding: 2rem;
+  border-radius: .5rem;
+  background: $main-color;
+  font-family: Gotham, sans-serif;
+  font-size: 1.6rem;
+  &:hover {
+    background-color: $additional-color;
+  }
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

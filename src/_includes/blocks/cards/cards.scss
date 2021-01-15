@@ -1,0 +1,42 @@
+$secondary-heading-color: #333b42;
+$secondary-text-color: #74797e;
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 5.5rem;
+}
+
+.card {
+  margin: 0 .5rem 4rem;
+  width: 28.5rem;
+  text-align: center;
+}
+
+.card__logo-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13.7rem;
+  height: 13.7rem;
+  margin: 0 auto 3.2rem;
+  background-color: $main-color;
+  border-radius: 50%;
+
+  svg {
+    max-width: 5rem;
+    max-height: 5rem;
+    fill: $main-font-color;
+  }
+}
+
+.card__heading {
+  margin-bottom: 2rem;
+  font-family: Gotham, sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 2.9rem;
+  color: $secondary-heading-color;
+  text-transform: uppercase;
+}

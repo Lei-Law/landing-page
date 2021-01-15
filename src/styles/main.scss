@@ -1,0 +1,94 @@
+//TOP SECTION
+.top-section {
+  background-image: url("../images/backgrounds/top-section-bg.jpg");
+}
+
+
+//DESIGN SECTION
+$design-section-bg: #f4f6f8;
+
+.design-section {
+  padding-bottom: 0;
+  background-color: $design-section-bg;
+  background-image: url("../images/backgrounds/design-section-bg.jpg");
+  @media screen and (max-width: $lg), screen and (max-height: $md) {
+    padding-bottom: 0;
+  }
+
+  .section__toggler {
+    background-color: $design-section-bg;
+  }
+
+  .toggler__logo {
+    fill: #96a5b4;
+  }
+
+  .wrapper {
+    overflow: hidden;
+  }
+
+  .secondary__heading {
+    margin: 2rem 0 3rem;
+    font-family: Gotham, sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 3.5rem;
+    @media screen and (max-width: $sm) {
+      font-size: 3.5rem;
+      line-height: 3.3rem;
+      margin: 3rem 0;
+    }
+  }
+
+  .design__img-block {
+    height: 24rem;
+    margin: 7rem auto 0;
+    overflow-y: hidden;
+    @media screen and (max-width: $xs) {
+      height: 20rem;
+    }
+  }
+}
+
+
+//FEATURE SECTION
+.features-section {
+
+  .section__toggler {
+    background-color: $additional-color;
+  }
+
+  .toggler__logo {
+    fill: $main-font-color;
+  }
+}
+
+
+//GUIDELINES SECTION
+$guidelines-section-border: #d8e0e8;
+
+.guidelines-section {
+  border-top: 1px solid $guidelines-section-border;
+  background-color: #f6f9fa;
+  padding-top: 7.5rem;
+
+  .section__toggler {
+    background-color: $main-font-color;
+  }
+
+  .toggler__logo {
+    fill: $guidelines-section-border;
+  }
+
+  .toggler__half_bottom {
+    border-left: 1px solid $guidelines-section-border;
+    border-bottom: 1px solid $guidelines-section-border;
+    border-right: 1px solid $guidelines-section-border;
+  }
+}
+
+
+//BOTTOM SECTION
+.bottom-section {
+  background-image: url("../images/backgrounds/bottom-section-bg.jpg");
+}

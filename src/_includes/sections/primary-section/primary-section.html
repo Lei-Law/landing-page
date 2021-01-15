@@ -1,0 +1,27 @@
+<section id="@@sectionName" class="primary-section @@sectionName">
+
+    <div class="wrapper">
+
+        <div class="primary__row">
+
+            @@if (logo) {
+                <svg class="primary__logo">
+                    <use xlink:href="images/sprite/sprite.svg#logo"></use>
+                </svg>
+            }
+
+            <div class="primary__info">
+                <div class="primary__topic">
+                    <h2 class="primary__heading">@@sectionHeading</h2>
+                    <p class="primary__text">@@sectionText</p>
+                </div>
+                <div class="primary__content">
+                    @@sectionContent
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

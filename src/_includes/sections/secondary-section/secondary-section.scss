@@ -1,0 +1,112 @@
+$toggler-size: 11rem;
+$secondary-heading-color: #333b42;
+$secondary-text-color: #74797e;
+
+
+//SECONDARY SECTION
+.secondary-section {
+  @include setTransition(padding);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding: 10rem 0;
+  text-align: center;
+  @media screen and (max-width: $lg), screen and (max-height: $md) {
+    padding: 6.5rem 0;
+  }
+
+  p {
+    font-family: Gotham, sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    letter-spacing: .1px;
+    color: $secondary-text-color;
+  }
+
+  &.secondary-section_closed {
+    padding: 4rem 0;
+    .wrapper {
+      overflow: hidden;
+    }
+  }
+}
+
+.section__toggler {
+  @include translateCenter();
+  position: absolute;
+  top: -1px;
+  border-radius: 50%;
+  width: $toggler-size;
+  height: $toggler-size;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.toggler__half {
+  height: 50%;
+
+  &.toggler__half_top {
+    border-radius: $toggler-size $toggler-size 0 0;
+  }
+  &.toggler__half_bottom {
+    border-radius: 0 0 $toggler-size $toggler-size;
+  }
+
+  .section__toggler:active & {
+    background-color: rgba(0,0,0,.1);
+  }
+
+  @media screen and (hover: hover) and (pointer: fine) {
+    .section__toggler:hover & {
+      background-color: rgba(0,0,0,.1);
+    }
+  }
+}
+
+.toggler__logo {
+  @include setTransition(transform);
+  @include translateCenter(null, rotate(90deg));
+  position: absolute;
+  width: 3.3rem;
+  height: 3.3rem;
+  .secondary-section.secondary-section_closed & {
+    @include translateCenter(null, rotate(-90deg));
+  }
+  .section__toggler:active & {
+    fill: $main-font-color;
+  }
+
+  @media screen and (hover: hover) and (pointer: fine) {
+    .section__toggler:hover & {
+      @include translateCenter(null, rotate(-90deg));
+      fill: $main-font-color;
+    }
+    .secondary-section.secondary-section_closed .section__toggler:hover & {
+      @include translateCenter(null, rotate(90deg));
+    }
+  }
+}
+
+.secondary__topic {
+  width: 60%;
+  margin: 0 auto 3.5rem;
+  @media screen and (max-width: $lg) {
+    width: 80%;
+    min-width: 30rem;
+  }
+}
+
+.secondary__heading {
+  margin: 5.5rem 0 2.5rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 2.9rem;
+  text-transform: uppercase;
+  color: #333b42;
+  @media screen and (max-width: $sm) {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+}
